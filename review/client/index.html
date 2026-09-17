@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Tic-Tac-Toe</h1>
+  </header>
+
+  <main>
+    <section id="board" class="board"></section>
+
+    <section class="controls">
+      <button id="restart">Restart</button>
+      <button id="save">Save</button>
+    </section>
+    
+    <p class="results"></p>
+    <h2>History</h2>
+
+    <section class="history">
+      <div>
+        <h3>Player X</h3>
+        <p>Wins: <span id="x-wins">0</span></p>
+        <p>Losses: <span id="x-losses">0</span></p>
+      </div>
+
+      <div>
+        <h3>Player O</h3>
+        <p>Wins: <span id="o-wins">0</span></p>
+        <p>Losses: <span id="o-losses">0</span></p>
+      </div>
+
+      <p>Draws: <span id="draws">0</span></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>@2026 Tic-Tac-Toe</p>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+:root {
+    --cell-size: 5rem;
+}
+
+body {
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(91, 172, 208);
+    font-weight: bold;
+
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, var(--cell-size));
+    grid-template-rows: repeat(3, var(--cell-size));
+    justify-content: center;
+}
+
+.board button {
+    background-color: rgb(236, 252, 255);
+    border: 1px solid rgb(91, 172, 208);
+    font-size: 8 rem;
+    cursor: pointer;
+}
+
+.controles {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.result {
+    text-align: center;
+    font-weight: bolder;
+}
+
+footer {
+    text-align: center;
+    padding-top: 15px;
+}

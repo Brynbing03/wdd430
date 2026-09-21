@@ -1,0 +1,6 @@
+<main class="picker-shell"><section class="picker-card" aria-labelledby="title">
+  <p class="eyebrow">Angular</p><h1 id="title">Find your color</h1><p class="intro">Choose a shade from the 128-color palette.</p>
+  <div class="selection" aria-live="polite"><div class="swatch" [style.background-color]="selected.hex"></div><div><span class="selection-label">Selected color</span><strong>{{ selected.name }}</strong><code>{{ selected.hex }}</code></div><button class="copy-button" (click)="copyHex()">{{ copied ? 'Copied!' : 'Copy hex' }}</button></div>
+  <div class="palette" role="listbox" aria-label="128 colors"><button *ngFor="let color of colors" class="color-button" [class.is-selected]="selected === color" [style.background-color]="color.hex" [attr.title]="color.name + ' — ' + color.hex" [attr.aria-label]="color.name + ' — ' + color.hex" [attr.aria-selected]="selected === color" (click)="select(color)"></button></div>
+  <p class="count">128 colors · 16 columns × 8 rows</p>
+</section></main>

@@ -1,0 +1,7 @@
+{
+  "name": "color-picker-angular",
+  "private": true,
+  "scripts": { "dev": "ng serve", "build": "ng build" },
+  "dependencies": { "@angular/common": "latest", "@angular/compiler": "latest", "@angular/core": "latest", "@angular/platform-browser": "latest", "rxjs": "latest", "zone.js": "latest" },
+  "devDependencies": { "@angular-devkit/build-angular": "latest", "@angular/cli": "latest", "typescript": "latest" }
+}

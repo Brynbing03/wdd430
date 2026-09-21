@@ -1,0 +1,7 @@
+{
+  "name": "color-picker-svelte",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "vite", "build": "vite build" },
+  "devDependencies": { "@sveltejs/vite-plugin-svelte": "latest", "vite": "latest", "svelte": "latest" }
+}

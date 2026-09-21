@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Picker — Vanilla</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="picker-shell">
+      <section class="picker-card" aria-labelledby="page-title">
+        <p class="eyebrow">Vanilla JavaScript</p>
+        <h1 id="page-title">Find your color</h1>
+        <p class="intro">Choose a shade from the 128-color palette.</p>
+
+        <div class="selection" aria-live="polite">
+          <div class="swatch" id="selected-swatch"></div>
+          <div>
+            <span class="selection-label">Selected color</span>
+            <strong id="selected-name">Royal Blue</strong>
+            <code id="selected-hex">#4169E1</code>
+          </div>
+          <button class="copy-button" id="copy-button" type="button">Copy hex</button>
+        </div>
+
+        <div class="palette" id="palette" role="listbox" aria-label="128 colors"></div>
+        <p class="count">128 colors · 16 columns × 8 rows</p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1117" />
+    <title>Gridlock — Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Gridlock home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>GRIDLOCK</span>
+        </a>
+        <div class="topbar-note"><span class="live-dot"></span> LOCAL MATCH</div>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow">TACTICAL ARENA <span>•</span> 01</div>
+        <h1 id="page-title">Make your move.<br /><em>Own the grid.</em></h1>
+        <p class="intro">A focused game of tic tac toe against an opponent that thinks three moves ahead.</p>
+      </section>
+
+      <section class="game-layout" aria-label="Tic tac toe game">
+        <aside class="panel score-panel">
+          <div class="panel-label">MATCH SCORE</div>
+          <div class="score-row">
+            <div class="score-item is-player">
+              <span class="score-symbol">X</span>
+              <span class="score-name">YOU</span>
+              <strong id="player-score">0</strong>
+            </div>
+            <div class="score-divider">:</div>
+            <div class="score-item is-ai">
+              <span class="score-symbol">O</span>
+              <span class="score-name">AI</span>
+              <strong id="ai-score">0</strong>
+            </div>
+          </div>
+          <div class="streak-row"><span id="streak-label">CURRENT STREAK</span><strong id="streak-value">—</strong></div>
+        </aside>
+
+        <div class="board-area">
+          <div class="status-line">
+            <div class="turn-status"><span class="status-pulse"></span><span id="status-text">Your turn</span></div>
+            <span class="round-label">ROUND <span id="round-number">01</span></span>
+          </div>
+          <div class="board" id="board" role="grid" aria-label="Tic tac toe board">
+            <button class="cell" data-index="0" role="gridcell" aria-label="Top left, empty"></button>
+            <button class="cell" data-index="1" role="gridcell" aria-label="Top center, empty"></button>
+            <button class="cell" data-index="2" role="gridcell" aria-label="Top right, empty"></button>
+            <button class="cell" data-index="3" role="gridcell" aria-label="Middle left, empty"></button>
+            <button class="cell" data-index="4" role="gridcell" aria-label="Center, empty"></button>
+            <button class="cell" data-index="5" role="gridcell" aria-label="Middle right, empty"></button>
+            <button class="cell" data-index="6" role="gridcell" aria-label="Bottom left, empty"></button>
+            <button class="cell" data-index="7" role="gridcell" aria-label="Bottom center, empty"></button>
+            <button class="cell" data-index="8" role="gridcell" aria-label="Bottom right, empty"></button>
+          </div>
+          <div class="board-footer">
+            <span><kbd>CLICK</kbd> to place your mark</span>
+            <span class="ai-status"><span class="ai-dot"></span> AI ONLINE</span>
+          </div>
+        </div>
+
+        <aside class="panel info-panel">
+          <div class="panel-label">OPPONENT PROFILE</div>
+          <div class="opponent-heading"><span class="avatar">O</span><div><strong>THE MACHINE</strong><small>Adaptive intelligence</small></div></div>
+          <p class="opponent-copy">It never blinks. It never guesses. Can you force a draw?</p>
+          <div class="difficulty"><span>DIFFICULTY</span><div class="difficulty-bars" aria-label="Expert difficulty"><i></i><i></i><i></i><i></i><i></i></div><strong>EXPERT</strong></div>
+        </aside>
+      </section>
+
+      <section class="controls" aria-label="Game controls">
+        <button class="button button-primary" id="new-game"><span>↻</span> New game</button>
+        <button class="button button-secondary" id="reset-score">Reset score</button>
+      </section>
+
+      <footer class="footer"><span>GRIDLOCK / TIC TAC TOE</span><span>NO LUCK. JUST LOGIC.</span></footer>
+    </main>
+    <div class="result-modal" id="result-modal" aria-hidden="true" role="dialog" aria-labelledby="result-title">
+      <div class="modal-card">
+        <span class="modal-kicker">ROUND COMPLETE</span>
+        <h2 id="result-title">You win.</h2>
+        <p id="result-copy">The grid is yours.</p>
+        <button class="button button-primary" id="next-round">Play again <span>→</span></button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

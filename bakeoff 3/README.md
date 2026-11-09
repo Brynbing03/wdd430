@@ -2,7 +2,7 @@
 
 FryRank is a fast-food fry review and ranking website. Anyone can browse restaurants, fries, ratings, and comments. Only authenticated users can submit, edit, or delete ratings and comments.
 
-This project is being built for WDD 430 Bakeoff 3 as a client-side rendered prototype using Next.js, React, Supabase, and PostgreSQL.
+This project was built for WDD 430 Bakeoff 3 as a client-side rendered prototype using Next.js, React, Supabase, and PostgreSQL. The current implementation includes public browsing, live Supabase rankings, authentication, profiles, ratings, comments, responsive polish, and local production-build verification.
 
 ## Project goals
 
@@ -24,10 +24,24 @@ The project is intentionally scoped as an MVP. It does not need to support every
 - **Backend and database:** Supabase PostgreSQL
 - **Database security:** Supabase Row Level Security policies
 - **Styling:** CSS or a small CSS utility approach if added later
-- **Deployment target:** Vercel, Netlify, or another Next.js-compatible host
+- **Deployment target:** Ready for Vercel, Netlify, or another Next.js-compatible host; provider deployment is not yet connected in this checkout
 - **Image/data sources:** Curated seed data first, with an optional external places or image API later
 
-Next.js is being used as the React application framework, but the main application interactions will run on the client to satisfy the client-side rendering requirement for this bakeoff.
+Next.js is used as the React application framework, while the main application interactions run in client components. The browser Supabase client loads catalog data, reads the current session, submits ratings/comments, updates profiles, and refreshes UI state after mutations. Public route shells are still provided by the App Router, but the interactive data experience is intentionally client-side for this bakeoff.
+
+## Current implementation status
+
+Completed features include:
+
+- Public browse page with Supabase-backed fries and live rating summaries.
+- Search, restaurant/style filters, sorting, loading states, empty results, and local-data fallback.
+- Restaurant detail pages with ratings, comments, author names, and owner-only edit/delete actions.
+- Supabase sign-up, log-in, log-out, profile display-name editing, and session persistence.
+- Profile page with the signed-in user’s ratings and comments.
+- Broken-image fallback behavior, mobile navigation, accessible labels, and responsive layouts.
+- Production build verification with `npm run build`.
+
+The remaining deployment action is provider-specific: add the two `NEXT_PUBLIC_SUPABASE_*` variables to the selected host, configure the deployed URL in Supabase Auth, deploy, and test the hosted version.
 
 ## Core user experience
 
@@ -68,9 +82,9 @@ Authenticated users can:
 - [x] Create the Next.js application structure.
 - [x] Establish the FryRank visual identity and layout.
 - [x] Create responsive navigation.
-- [ ] Add loading, empty, error, and not-found states.
-- [ ] Add environment variable support.
-- [ ] Add a complete setup section to this README as the project evolves.
+- [x] Add loading, empty, error, and not-found states.
+- [x] Add environment variable support.
+- [x] Add a complete setup section to this README.
 
 ### Public browsing
 
@@ -78,9 +92,9 @@ Authenticated users can:
 - [ ] Build the fry browsing page.
 - [x] Display fry cards with image, restaurant, name, score, and review count.
 - [x] Add text search.
-- [ ] Add restaurant filtering.
-- [ ] Add fry-style filtering.
-- [ ] Add rating and newest sorting.
+- [x] Add restaurant filtering.
+- [x] Add fry-style filtering.
+- [x] Add rating, review-count, and newest sorting.
 - [x] Build restaurant detail pages.
 - [x] Build fry detail pages.
 - [ ] Make all public pages usable without authentication.
@@ -92,42 +106,42 @@ Authenticated users can:
 - [x] Add log-out action.
 - [x] Display authentication errors clearly.
 - [x] Disable email confirmation for local class-project testing.
-- [ ] Preserve the signed-in session after refresh.
-- [ ] Add a profile page.
-- [ ] Add an authentication gate for rating and comment forms.
+- [x] Preserve the signed-in session after refresh.
+- [x] Add a profile page.
+- [x] Add an authentication gate for rating and comment forms.
 
 ### Ratings
 
-- [ ] Build a 1–5 star rating input.
-- [ ] Validate that the rating is an integer from 1 through 5.
-- [ ] Allow one rating per user per fry.
-- [ ] Allow users to edit their own rating.
-- [ ] Allow users to delete their own rating.
-- [ ] Calculate and display average ratings.
-- [ ] Display the number of ratings.
-- [ ] Update the displayed score after a successful change.
+- [x] Build a 1–5 star rating input.
+- [x] Validate that the rating is an integer from 1 through 5.
+- [x] Allow one rating per user per fry.
+- [x] Allow users to edit their own rating.
+- [x] Allow users to delete their own rating.
+- [x] Calculate and display average ratings.
+- [x] Display the number of ratings.
+- [x] Update the displayed score after a successful change.
 
 ### Comments
 
-- [ ] Build the comment list.
-- [ ] Build the comment form.
-- [ ] Require authenticated users to submit comments.
-- [ ] Prevent empty comments.
-- [ ] Enforce a reasonable maximum comment length.
-- [ ] Show the author and date.
-- [ ] Allow users to edit their own comments.
-- [ ] Allow users to delete their own comments.
-- [ ] Show useful database and validation errors.
+- [x] Build the comment list.
+- [x] Build the comment form.
+- [x] Require authenticated users to submit comments.
+- [x] Prevent empty comments.
+- [x] Enforce a reasonable maximum comment length.
+- [x] Show the author and date.
+- [x] Allow users to edit their own comments.
+- [x] Allow users to delete their own comments.
+- [x] Show useful database and validation errors.
 
 ### Responsive design and accessibility
 
-- [ ] Test desktop, tablet, and mobile layouts.
-- [ ] Use readable type sizes and sufficient color contrast.
-- [ ] Make controls usable by keyboard and touch.
-- [ ] Add labels to form inputs.
-- [ ] Provide useful image alt text.
-- [ ] Make error messages understandable.
-- [ ] Ensure cards and forms do not overflow on small screens.
+- [x] Test desktop and responsive layouts.
+- [x] Use readable type sizes and sufficient color contrast.
+- [x] Make controls usable by keyboard and touch.
+- [x] Add labels to form inputs.
+- [x] Provide useful image alt text and broken-image fallbacks.
+- [x] Make error messages understandable.
+- [x] Ensure cards and forms do not overflow on small screens.
 
 ## Database design
 
@@ -291,49 +305,49 @@ The application should keep image URLs separate from the UI so that an image pro
 
 ### Phase 1: Foundation
 
-- [ ] Confirm the Next.js project structure.
-- [ ] Read the installed Next.js guidance in `node_modules/next/dist/docs/`.
-- [ ] Remove or replace MealMate-specific UI and data references if the existing project is being reused.
-- [ ] Configure Supabase environment variables.
-- [ ] Create the shared layout and navigation.
-- [ ] Establish the visual design system.
+- [x] Confirm the Next.js project structure.
+- [x] Read the installed Next.js guidance in `node_modules/next/dist/docs/`.
+- [x] Remove or replace MealMate-specific UI and data references if the existing project is being reused.
+- [x] Configure Supabase environment variables.
+- [x] Create the shared layout and navigation.
+- [x] Establish the visual design system.
 
 ### Phase 2: Database and authentication
 
-- [ ] Create the Supabase schema.
-- [ ] Add Row Level Security policies.
-- [ ] Add profile creation behavior after sign-up.
-- [ ] Build sign-up, log-in, and log-out.
-- [ ] Verify session persistence.
+- [x] Create the Supabase schema.
+- [x] Add Row Level Security policies.
+- [x] Add profile creation behavior after sign-up.
+- [x] Build sign-up, log-in, and log-out.
+- [x] Verify session persistence.
 
 ### Phase 3: Public fry catalog
 
-- [ ] Add seed restaurants and fries.
-- [ ] Build the home page.
-- [ ] Build the browse page.
-- [ ] Build search, filters, and sorting.
-- [ ] Build restaurant and fry detail pages.
-- [ ] Add image fallback and attribution display.
+- [x] Add seed restaurants and fries.
+- [x] Build the home page.
+- [x] Build the browse page.
+- [x] Build search, filters, and sorting.
+- [x] Build restaurant and fry detail pages.
+- [x] Add image fallback behavior.
 
 ### Phase 4: Ratings and comments
 
 - [x] Build the rating form.
 - [x] Build the score calculation and display.
 - [x] Build the comment list and form.
-- [ ] Add edit and delete actions.
-- [ ] Add authentication gates.
-- [ ] Add validation and error handling.
+- [x] Add edit and delete actions.
+- [x] Add authentication gates.
+- [x] Add validation and error handling.
 
 ### Phase 5: Responsive polish and testing
 
-- [ ] Test desktop and mobile layouts.
-- [ ] Test signed-out browsing.
-- [ ] Test sign-up, log-in, and log-out.
-- [ ] Test rating and comment permissions.
-- [ ] Test refresh and persistence.
-- [ ] Test broken image behavior.
-- [ ] Run the production build.
-- [ ] Deploy the prototype.
+- [x] Test desktop and responsive layouts.
+- [x] Test signed-out browsing behavior.
+- [x] Test the available sign-up, log-in, and log-out flows.
+- [x] Verify ownership checks and RLS policies.
+- [x] Test refresh and persistence.
+- [x] Test broken image behavior in the UI implementation.
+- [x] Run the production build.
+- [ ] Deploy the prototype after selecting a hosting provider.
 
 ## Manually built feature
 
@@ -348,17 +362,17 @@ AI may be used for explanations, debugging, and review, but the implementation d
 
 ## Validation and error handling checklist
 
-- [ ] Invalid email addresses show a clear error.
-- [ ] Password requirements are explained.
-- [ ] Incorrect login credentials show a useful message.
-- [ ] Empty comments cannot be submitted.
-- [ ] Overly long comments are rejected.
-- [ ] Ratings outside 1–5 are rejected.
-- [ ] Duplicate ratings are handled as edits instead of duplicate rows.
-- [ ] Unauthorized write attempts are rejected by both the UI and database policies.
-- [ ] Failed database requests show a recoverable error state.
-- [ ] Empty search results show an informative message.
-- [ ] Broken images use a fallback image.
+- [x] Invalid email addresses show a clear error.
+- [x] Password requirements are explained.
+- [x] Incorrect login credentials show a useful message.
+- [x] Empty comments cannot be submitted.
+- [x] Overly long comments are rejected.
+- [x] Ratings outside 1–5 are rejected.
+- [x] Duplicate ratings are handled as edits instead of duplicate rows.
+- [x] Unauthorized write attempts are rejected by both the UI and database policies.
+- [x] Failed database requests show a recoverable error state.
+- [x] Empty search results show an informative message.
+- [x] Broken images use a fallback component.
 
 ## Testing checklist
 

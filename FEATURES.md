@@ -76,8 +76,8 @@ This is the working checklist for turning the current visual prototype into a fu
 - [x] Add keyboard-accessible modals and controls
 - [x] Add confirmation before destructive actions
 - [x] Add mobile-friendly bracket scrolling and match cards
-- [x] Add automated tests for ranking, match results, storage, and form validation
-- [x] Test direct navigation and refresh behavior for every route
+- [x] Add automated tests for ranking and match-result validation
+- [ ] Add automated browser tests for storage, authentication, form validation, direct navigation, and refresh behavior
 - [x] Add a small demo/reset dataset for presentations
 
 ## Suggested working order

@@ -33,3 +33,9 @@ Bakeoff 2 is complete as a polished local/cloud prototype with pool-play history
 ### Deployment
 
 Netlify deployment is configured in `netlify.toml`. See `DEPLOYMENT.md` for the build settings, required Supabase environment variables, and redirect URL setup.
+
+### Submission materials
+
+- [Implementation plan](docs/BAKEOFF-2-PLAN.md)
+- [Reflection](docs/REFLECTION.md)
+- [Evaluation form draft](docs/EVALUATION-DRAFT.md)

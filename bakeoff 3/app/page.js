@@ -91,8 +91,7 @@ export default function HomePage() {
     <main>
       <nav className="site-nav" aria-label="Main navigation">
         <a className="brand" href="/">
-          <span className="brand-mark">F</span>
-          <span>FryRank</span>
+          <img className="brand-logo" src="/images/fry-rankings-logo.png" alt="Fry Rankings" />
         </a>
         <button className="nav-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-menu" onClick={() => setMenuOpen((open) => !open)}><span className="sr-only">{menuOpen ? 'Close' : 'Open'} navigation menu</span><span aria-hidden="true">{menuOpen ? '×' : '☰'}</span></button>
         <div className={`nav-links${menuOpen ? ' open' : ''}`} id="site-menu">
@@ -105,22 +104,15 @@ export default function HomePage() {
       <section className="hero" id="about">
         <div className="hero-copy">
           <p className="eyebrow">The unofficial fry authority</p>
-          <h1>Life is too short for <em>average</em> fries.</h1>
+          <h1>Find your next favorite <em>fry.</em></h1>
           <p className="hero-text">
-            Find the best fast-food fries near you, then help the community decide
-            which crispy, salty, golden strands deserve the top spot.
+            Browse the community rankings, see what other fry fans think, and
+            add your own rating.
           </p>
           <a className="button" href="#browse">Explore the rankings <span aria-hidden="true">→</span></a>
         </div>
-        <div className="hero-art" aria-label="Illustration of a carton of fries" role="img">
-          <div className="fry f1" />
-          <div className="fry f2" />
-          <div className="fry f3" />
-          <div className="fry f4" />
-          <div className="fry f5" />
-          <div className="carton">F</div>
-          <span className="art-star star-one">✦</span>
-          <span className="art-star star-two">✦</span>
+        <div className="hero-logo-wrap">
+          <img className="hero-logo" src="/images/fry-rankings-logo.png" alt="Fry Rankings logo" />
         </div>
       </section>
 

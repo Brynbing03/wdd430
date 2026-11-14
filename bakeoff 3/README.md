@@ -2,6 +2,8 @@
 
 FryRank is a fast-food fry review and ranking website. Anyone can browse restaurants, fries, ratings, and comments. Only authenticated users can submit, edit, or delete ratings and comments.
 
+Research evidence for the chosen client-side architecture is documented in [docs/RESEARCH.md](docs/RESEARCH.md), and the project reflection is in [docs/REFLECTION.md](docs/REFLECTION.md).
+
 This project was built for WDD 430 Bakeoff 3 as a client-side rendered prototype using Next.js, React, Supabase, and PostgreSQL. The current implementation includes public browsing, live Supabase rankings, authentication, profiles, ratings, comments, responsive polish, and local production-build verification.
 
 ## Project goals
